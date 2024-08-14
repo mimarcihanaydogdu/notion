@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Günün Sözü</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .quote-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+        .quote {
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quote-container">
+    <p class="quote" id="quote"></p>
+</div>
+
+<script>
+    // Günün sözlerini liste olarak tanımlayın
+    const quotes = [
+        "Başarı, cesaretin ödülüdür. – Disraeli",
+        "Başarı, hiç hata yapmayanlar için değil, hatalarından öğrenenler içindir. – George Bernard Shaw",
+        "Başarılı olmak, her şeyden önce hazırlanmaktır. – Henry Ford",
+        "Başarı, yaptığınız işe inandığınızda gelir. – Oprah Winfrey",
+        "Başarı, hedeflerinize ulaşma yolunda attığınız adımlardır. – Zig Ziglar",
+        "Başarı, bir süreçtir; bir yolculuktur, varış noktası değil. – Ben Sweetland",
+        "Başarı, genellikle başkalarının pes ettiği noktada gelir. – Walter Elliot",
+        "Başarı, küçük çabaların tekrar tekrar tekrarlanmasıyla elde edilir. – Robert Collier",
+        "Başarı, hedeflerinizle ilgili sürekli bir gelişim sürecidir. – Tony Robbins",
+        "Başarı, azimle çalışmanın sonucudur. – Colin Powell",
+        "Motivasyon, her şeydir. Motivasyon olmadan, hiçbir şey başlamaz. – Lou Holtz",
+        "Başarıya giden yol, her günün sonunda biraz daha iyi olmaktan geçer. – Steve Jobs",
+        "Küçük bir motivasyon, büyük başarılar getirir. – Zig Ziglar",
+        "Motivasyon, düşüncelerinizi eyleme dönüştürmenin anahtarıdır. – Jim Rohn",
+        "Her günün getirdiği fırsatları değerlendirin; her an bir fırsattır. – Jack Canfield",
+        "Kendinize inanmak, motivasyonun temelidir. – Norman Vincent Peale",
+        "Motivasyon, en karanlık anlarda bile ışığı bulmanın yoludur. – Robin Sharma",
+        "Her gün bir adım daha ileri gidin; bu, motivasyonun sırrıdır. – Brian Tracy",
+        "Motivasyon, tutkunuzu besler ve hayallerinizi gerçeğe dönüştürür. – Les Brown",
+        "Motivasyon, hayallerinizi gerçekleştirmek için en büyük itici güçtür. – Tony Robbins",
+        // Diğer sözler buraya eklenebilir
+    ];
+
+    // Günün tarihini al
+    const today = new Date();
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+
+    // Günün tarihine göre bir söz seç
+    const quoteOfTheDay = quotes[dayOfYear % quotes.length];
+
+    // Seçilen sözü HTML'de göster
+    document.getElementById("quote").innerText = quoteOfTheDay;
+</script>
+
+</body>
+</html>
